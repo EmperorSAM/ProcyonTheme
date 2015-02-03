@@ -16,3 +16,6 @@ regions[sidebar_first] = Sidebar first
 regions[sidebar_second] = Sidebar second
 regions[page_bottom] = Page bottom
 regions[footer] = Footer
+
+regions[modal1] = Modal window 1 (#modal1)
+regions[modal2] = Modal window 2 (#modal2)

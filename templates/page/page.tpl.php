@@ -16,7 +16,7 @@
 </header>
   
 <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation">
+        <nav id="main-menu" class="navigation">
             <?php print theme('links__system_main_menu', array(
               'links' => $main_menu,
               'attributes' => array(
@@ -79,3 +79,13 @@
 <footer>
     <?php print render($page['footer']); ?>
 </footer>
+
+<div id="modal1" data-modal>
+    <?php print render($page['modal1']); ?>
+    <span data-modal-close></span>
+</div>
+
+<div id="modal2" data-modal>
+    <?php print render($page['modal2']); ?>
+    <span data-modal-close></span>
+</div>
