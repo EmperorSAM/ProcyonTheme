@@ -16,7 +16,7 @@
 </header>
   
 <?php if ($main_menu): ?>
-        <nav id="main-menu" class="navigation">
+        <nav id="main-menu" role="navigation">
             <?php print theme('links__system_main_menu', array(
               'links' => $main_menu,
               'attributes' => array(
