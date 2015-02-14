@@ -10,13 +10,18 @@
         
         <div class="sm-8 md-10">
             <h1><?php print $title; ?></h1>
-            <?php print render($page['header']); ?>
         </div>
 
 </header>
-  
+
+<?php if ($page['navigation']): ?>
+<nav role="navigation">
+    <?php print render($page['navigation']); ?>
+</nav>
+<?php endif; ?>
+
 <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation">
+        <nav id="main-menu" class="navigation" role="navigation">
             <?php print theme('links__system_main_menu', array(
               'links' => $main_menu,
               'attributes' => array(
@@ -39,7 +44,7 @@
             <div class="<?php if ($page['sidebar_first'] && $page['sidebar_second']): ?>sm-6<?php elseif ($page['sidebar_first']): ?>sm-9<?php elseif ($page['sidebar_second']): ?>sm-9<?php else: ?>xs-12<?php endif; ?>">
             
                 <?php print $breadcrumb; ?>
-                
+
                 <?php print $messages; ?>
                 
                 <?php print render($page['help']); ?>
@@ -89,3 +94,15 @@
     <?php print render($page['modal2']); ?>
     <span data-modal-close></span>
 </div>
+
+<?php if (theme_get_setting('procyon_do_not_go')): ?>
+<div class="do-not-go">
+    <?php print render($page['donotgo']); ?>
+</div>
+<?php endif; ?>
+
+<?php if (theme_get_setting('procyon_back_to_top')): ?>
+<div class="back-to-top">
+    
+</div>
+<?php endif; ?>

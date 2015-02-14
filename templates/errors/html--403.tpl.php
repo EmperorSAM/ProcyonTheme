@@ -8,25 +8,12 @@
     <?php print $scripts; ?>
   </head>
 <body>
-    
-<div class="container">
-    
-    <div class="sm-6">
-        <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>">
-                <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>" />
-            </a>
-        <?php endif; ?>
-    </div>
-    
-    <div class="sm-6">
-        <h1>403 - <?php print t('Access denied'); ?></h1>
-        <a onclick="history.back(); return false;"><?php print t('Back'); ?></a>
-        <a href="<?php print $front_page; ?>"><?php print t('Home'); ?></a>
-        <a href="/user"><?php print t('Login'); ?></a>
-    </div>
 
-</div>
+<?php print $page_top; ?>
+
+<?php print $page; ?>
+
+<?php print $page_bottom; ?>
 
 </body>
 </html>
