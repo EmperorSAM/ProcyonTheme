@@ -13,7 +13,7 @@
             <?php endif; ?>
             
             <h1>403 - <?php print t('Access denied'); ?></h1>
-            <a onclick="history.back(); return false;"><?php print t('Back'); ?></a>
+            <a href="javascript:history.go(-1);"><?php print t('Back'); ?></a>
             <a href="/"><?php print t('Home'); ?></a>
             <a href="/user"><?php print t('Login'); ?></a>
     
