@@ -75,15 +75,6 @@ function procyon_preprocess_html(&$variables) {
   );
   $variables['html_attributes'] = drupal_attributes($html_attributes);
   
-  // RDF namespaces.
-  if ($variables['rdf_namespaces']) {
-    $prefixes = array();
-    foreach (explode("\n ", ltrim($variables['rdf_namespaces'])) as $namespace) {
-      $prefixes[] = str_replace('="', ': ', substr($namespace, 6, -1));
-    }
-    $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
-  }
-  
   // Login and a password recovery pages.
   if (theme_get_setting('procyon_login_page')) {
     if(arg(0) == 'user' && !arg(1) && !$user->uid) {
