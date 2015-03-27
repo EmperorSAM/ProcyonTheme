@@ -53,9 +53,11 @@ function procyon_preprocess_page(&$variables) {
     $status = drupal_get_http_header("status");
     if($status == "404 Not Found") {
       $variables['theme_hook_suggestions'][] = 'page__404';
+      drupal_set_title('404 - '.t('Forbidden page'));
     }
     if($status == "403 Forbidden") {
       $variables['theme_hook_suggestions'][] = 'page__403';
+      drupal_set_title('403 - '.t('Access denied'));
     }
   }
 }
@@ -66,17 +68,20 @@ function procyon_preprocess_page(&$variables) {
 function procyon_preprocess_html(&$variables) {
   global $user;
   
-  // Error pages.
-  // Files in /templates/errors/ folder.
-  // html--403.tpl.php & html--404.tpl.php
-  if (theme_get_setting('procyon_login_page')) {
-    $status = drupal_get_http_header("status");  
-    if($status == "404 Not Found") {
-      $variables['theme_hook_suggestions'][] = 'html__404';
+  // HTML Attributes
+  $html_attributes = array(
+    'lang' => $variables['language']->language,
+    'dir' => $variables['language']->dir,
+  );
+  $variables['html_attributes'] = drupal_attributes($html_attributes);
+  
+  // RDF namespaces.
+  if ($variables['rdf_namespaces']) {
+    $prefixes = array();
+    foreach (explode("\n ", ltrim($variables['rdf_namespaces'])) as $namespace) {
+      $prefixes[] = str_replace('="', ': ', substr($namespace, 6, -1));
     }
-    if($status == "403 Forbidden") {
-      $variables['theme_hook_suggestions'][] = 'html__403';
-    }
+    $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
   }
   
   // Login and a password recovery pages.
@@ -98,6 +103,13 @@ function procyon_css_alter(&$css) {
   unset($css[drupal_get_path('module', 'system') . '/system.messages.css']);
   unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
   unset($css[drupal_get_path('module', 'system') . '/system.theme.css']);
+}
+
+/**
+* Implements hook_preprocess_block().
+*/
+function procyon_preprocess_block(&$variables, $hook) {
+  $variables['title'] = isset($variables['block']->subject) ? $variables['block']->subject : '';
 }
 
 /**
