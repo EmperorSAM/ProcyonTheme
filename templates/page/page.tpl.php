@@ -40,7 +40,7 @@
     </aside> <!-- End first sidebar -->
     <?php endif; ?>
 
-    <main role="main" class="<?php if ($page['sidebar_first'] && $page['sidebar_second']): ?>sm-6<?php elseif ($page['sidebar_first']): ?>sm-9<?php elseif ($page['sidebar_second']): ?>sm-9<?php else: ?>xs-12<?php endif; ?>">
+    <main role="main" class="<?php if ($page['sidebar_first'] && $page['sidebar_second']): ?>sm-6<?php elseif ($page['sidebar_first']): ?>sm-9<?php elseif ($page['sidebar_second']): ?>sm-9<?php else: ?>xs-12<?php endif; ?> <?php print $classes; ?>" <?php print $attributes; ?>>
         <?php print $breadcrumb; ?>
         <?php print $messages; ?>
         <?php if (!empty($tabs)): ?>
