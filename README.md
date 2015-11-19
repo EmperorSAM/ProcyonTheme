@@ -18,4 +18,4 @@
 
 [Официальный сайт Procyon](http://procyon.sl-7.ru)
 
-[GitHub](https://github.com/SL7/Procyon)
+[GitHub](https://github.com/EmperorSAM/Procyon)

@@ -14,4 +14,4 @@
   <h2 class="title"><?php print $title; ?></h2>
 <?php endif; ?>
 <?php print render($title_suffix); ?>
-<?php print $content; ?> 
+<?php print $content; ?>
