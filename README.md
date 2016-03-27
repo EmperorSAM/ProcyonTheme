@@ -16,6 +16,6 @@
 
 **В состав шаблона не входит сам framework. Качайте отдельно.**
 
-[Официальный сайт Procyon](http://procyon.sl-7.ru)
+[Официальный сайт Procyon](http://emperorsam.github.io/Procyon)
 
 [GitHub](https://github.com/EmperorSAM/Procyon)
