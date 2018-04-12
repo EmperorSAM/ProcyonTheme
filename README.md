@@ -16,7 +16,7 @@
 
 **В состав шаблона не входит сам framework. Качайте отдельно.**
 
-[Официальный сайт Procyon](http://semyondragunov.github.io/Procyon)
+[Документация онлайн Procyon](http://semyondragunov.github.io/Procyon)
 
 [GitHub](https://github.com/SemyonDragunov/Procyon)
 Автор: Семён Драгунов [sam.dragunov@gmail.com](sam.dragunov@gmail.com)
