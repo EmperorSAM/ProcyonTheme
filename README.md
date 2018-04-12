@@ -14,9 +14,8 @@
 
 Присутствует тестовый шаблон для Display Suite.
 
-**В состав шаблона не входит сам framework. Качайте отдельно.**
+**В состав шаблона не входит сам framework. Качайте отдельно отсюда [GitHub](https://github.com/SemyonDragunov/Procyon).**
 
 [Документация онлайн Procyon](http://semyondragunov.github.io/Procyon)
 
-[GitHub](https://github.com/SemyonDragunov/Procyon)
 Автор: Семён Драгунов [sam.dragunov@gmail.com](sam.dragunov@gmail.com)
